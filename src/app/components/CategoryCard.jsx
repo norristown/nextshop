@@ -19,7 +19,7 @@ function CategoryCard({ name, imgUrl }) {
         }}
       />
       <Button
-        variant="secondary"
+        primary={false}
         className="absolute -translate-y1/2 -translate-x-1/2 mx-auto left-1/2 bottom-[10%] rounded p-4"
       >
         {name}

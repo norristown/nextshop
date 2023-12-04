@@ -25,7 +25,7 @@ function CategoriesSection() {
   //   getProducts();
   // }, []);
   return (
-    <div className="mb-12">
+    <div className="mb-12" id="categories">
       <h2 className="text-center text-zinc-900 text-3xl mt-6 mb-3 p-2 font-semibold">
         Browse by Category
       </h2>

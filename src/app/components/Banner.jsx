@@ -13,10 +13,14 @@ function Banner() {
           <h1 className="text-2xl pb-3 font-semibold">
             Only the hottest items for you.
           </h1>
-          <p className="pb-3">Hurry - before they&apos;re all gone.</p>
-          <Button primary={true} className="rounded-lg font-semibold">
-            Shop Now
-          </Button>
+          <p className="pb-3 text-center">
+            Hurry - before they&apos;re all gone.
+          </p>
+          <a href="#categories">
+            <Button primary={true} className="rounded font-semibold w-full">
+              Shop Now
+            </Button>
+          </a>
         </div>
       </div>
     </div>

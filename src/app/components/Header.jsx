@@ -18,10 +18,12 @@ function Header() {
             <NavLink url="/tech">Tech</NavLink>
           </ul>
         </div>
-        <div className="flex items-center">
-          <NavLink url="/">NextShop</NavLink>
+        <div className="flex items-center text-6xl text-zinc-900 font-s ">
+          <NavLink url="/" color="user">
+            NextShopAPI
+          </NavLink>
         </div>
-        <div className="flex">
+        <div className="flex items-center">
           <NavButton url="/search">User</NavButton>
           <NavButton url="/user">Cart</NavButton>
         </div>

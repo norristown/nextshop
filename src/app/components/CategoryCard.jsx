@@ -2,11 +2,8 @@ import Image from "next/image";
 import Button from "./utilities/Button";
 
 function CategoryCard({ name, imgUrl }) {
-  //   function imageLoader({ src }) {
-  //     return src;
-  //   }
   return (
-    <div className="relative w-full h-80">
+    <div className="relative w-full h-96">
       <Image
         src={imgUrl}
         layout="fill"

@@ -14,16 +14,7 @@ function CategoriesSection() {
     { category: "Jewelry", image: jewelryImg },
     { category: "Electronics", image: techImg },
   ];
-  // const [data, setData] = useState([]);
-  // useEffect(() => {
-  //   async function getProducts() {
-  //     const url = await fetch("https://fakestoreapi.com/products");
-  //     const data = await url.json();
-  //     console.log(data);
-  //     setData(data);
-  //   }
-  //   getProducts();
-  // }, []);
+
   return (
     <div className="mb-12" id="categories">
       <h2 className="text-center text-zinc-900 text-3xl mt-6 mb-3 p-2 font-semibold">

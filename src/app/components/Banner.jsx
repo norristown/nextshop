@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import bannerImg from "../../../public/images/banner.jpg";
 import Button from "./utilities/Button";
 
@@ -16,11 +17,11 @@ function Banner() {
           <p className="pb-3 text-center">
             Hurry - before they&apos;re all gone.
           </p>
-          <a href="#categories">
+          <Link href="/store">
             <Button primary={true} className="rounded font-semibold w-full">
               Shop Now
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

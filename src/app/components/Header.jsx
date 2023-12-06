@@ -6,28 +6,57 @@ import {
   Bars3Icon,
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
+import { useState } from "react";
+import clsx from "clsx";
+import { usePathname } from "next/navigation";
 import NavLink from "./utilities/NavLink";
+import { useCart } from "../context/cart-context";
 
 function Header() {
   const navLinks = [
-    { title: `Men's`, path: "/mens" },
-    { title: `Women's`, path: "/womens" },
-    { title: "Jewelry", path: "/jewelry" },
-    { title: "Electronics", path: "/electronics" },
+    {
+      id: 1,
+      title: `Men's`,
+      path: "/category/mens",
+    },
+    {
+      id: 2,
+      title: `Women's`,
+      path: "/category/womens",
+    },
+    {
+      id: 3,
+      title: "Jewelry",
+      path: "/category/jewelry",
+    },
+    {
+      id: 4,
+      title: "Electronics",
+      path: "/category/electronics",
+    },
   ];
+
+  const pathname = usePathname();
+  const { state } = useCart();
+
   return (
-    <nav className="flex justify-center bg-white md:bg-white/80 backgrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10">
-      <div className="navbar__menu-left hidden md:flex flex-1 items-center">
+    <nav className="flex bg-white md:bg-white/80 backgrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10">
+      <ul className="navbar__menu-left hidden lg:flex flex-1 justify-center items-center">
         {navLinks.map((link) => (
-          <div key={link.title}>
+          <li
+            className={clsx("", {
+              "border-b-4 border-blue-600": pathname === link.path,
+            })}
+            key={link.id}
+          >
             <NavLink url={link.path}>{link.title}</NavLink>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
       <div className="hidden flex-1 md:flex items-center justify-center text-3xl md:text-6xl text-zinc-900 font-bold py-4">
         <Link href="/">NextShopAPI</Link>
       </div>
-      <div className=" hidden md:flex flex-1 items-center justify-end">
+      <div className=" hidden lg:flex flex-1 items-center justify-center">
         <NavLink url="/search">
           <UserIcon className="h-7 w-7" />
         </NavLink>

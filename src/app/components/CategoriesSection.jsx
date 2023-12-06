@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import CategoryCard from "./CategoryCard";
 import womensImg from "../../../public/images/womens_category.jpg";
 import mensImg from "../../../public/images/mens_category.jpg";
@@ -9,10 +10,14 @@ import techImg from "../../../public/images/tech.jpg";
 
 function CategoriesSection() {
   const categories = [
-    { category: "Men's Clothing", image: mensImg },
-    { category: "Women's Clothing", image: womensImg },
-    { category: "Jewelry", image: jewelryImg },
-    { category: "Electronics", image: techImg },
+    { category: "Men's Clothing", image: mensImg, path: "/category/mens" },
+    {
+      category: "Women's Clothing",
+      image: womensImg,
+      path: "/category/womens",
+    },
+    { category: "Jewelry", image: jewelryImg, path: "/category/jewelry" },
+    { category: "Electronics", image: techImg, path: "/category/electronics" },
   ];
 
   return (
@@ -22,7 +27,9 @@ function CategoriesSection() {
       </h2>
       <div className="grid gird-cols-1 md:grid-cols-4">
         {categories.map((x, i) => (
-          <CategoryCard name={x.category} imgUrl={x.image} key={i} />
+          <Link href={x.path} key={i}>
+            <CategoryCard name={x.category} imgUrl={x.image} />
+          </Link>
         ))}
       </div>
     </div>

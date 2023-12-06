@@ -5,7 +5,7 @@ import Button from "./utilities/Button";
 
 function Banner() {
   return (
-    <div className="flex flex-col md:flex-row gap-4 items-center mt-36">
+    <div className="flex flex-col md:flex-row gap-4 items-center mt-48">
       <div className="banner__image-container w-full md:w-1/2">
         <Image alt="banner image" src={bannerImg} />
       </div>

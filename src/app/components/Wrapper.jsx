@@ -2,7 +2,7 @@ import StoreCard from "./StoreCard";
 
 function Wrapper({ storeData, category }) {
   return (
-    <div className="mt-32 mb-12" id="categories">
+    <div className="mt-44 mb-12" id="categories">
       <h2 className="text-center text-zinc-900 text-3xl mt-6 mb-3 p-2 font-semibold">
         {category}
       </h2>

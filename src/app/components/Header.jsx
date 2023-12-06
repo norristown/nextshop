@@ -10,7 +10,6 @@ import { useState } from "react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import NavLink from "./utilities/NavLink";
-import { useCart } from "../context/cart-context";
 
 function Header() {
   const navLinks = [
@@ -37,10 +36,9 @@ function Header() {
   ];
 
   const pathname = usePathname();
-  const { state } = useCart();
 
   return (
-    <nav className="flex bg-white md:bg-white/80 backgrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10">
+    <nav className="flex bg-white md:bg-white/80 backgrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10 py-8">
       <ul className="navbar__menu-left hidden lg:flex flex-1 justify-center items-center">
         {navLinks.map((link) => (
           <li

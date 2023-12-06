@@ -6,7 +6,7 @@ function Wrapper({ storeData, category }) {
       <h2 className="text-center text-zinc-900 text-3xl mt-6 mb-3 p-2 font-semibold">
         {category}
       </h2>
-      <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 m-12">
+      <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 m-12">
         {storeData.map((x, i) => (
           <div className="flex flex-col justify-between" key={i}>
             <div>

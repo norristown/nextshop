@@ -38,7 +38,7 @@ function Header() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex bg-white md:bg-white/80 backgrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10 py-8">
+    <nav className="flex bg-white md:bg-white/80 backgrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10 pt-4">
       <ul className="navbar__menu-left hidden lg:flex flex-1 justify-center items-center">
         {navLinks.map((link) => (
           <li

@@ -54,11 +54,11 @@ function Header() {
       <div className="hidden flex-1 md:flex items-center justify-center text-5xl text-zinc-900 font-bold py-4">
         <Link href="/">NextShopAPI</Link>
       </div>
-      <div className=" hidden lg:flex flex-1 items-center justify-center mt-4 ">
-        <NavLink url="/search">
+      <div className=" hidden lg:flex flex-1 items-center justify-center mt-4">
+        <NavLink url="/user">
           <UserIcon className="h-7 w-7" />
         </NavLink>
-        <NavLink url="/user">
+        <NavLink url="/cart">
           <ShoppingCartIcon className="h-7 w-7" />
         </NavLink>
       </div>

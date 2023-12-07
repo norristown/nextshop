@@ -3,7 +3,7 @@ import Button from "./utilities/Button";
 
 function CategoryCard({ name, imgUrl }) {
   return (
-    <div className="relative w-full h-96">
+    <div className="relative w-full h-80">
       <Image
         src={imgUrl}
         layout="fill"
@@ -16,7 +16,7 @@ function CategoryCard({ name, imgUrl }) {
         }}
       />
       <Button
-        primary={false}
+        variant="secondary"
         className="absolute -translate-y1/2 -translate-x-1/2 mx-auto left-1/2 bottom-[10%] rounded p-4"
       >
         {name}

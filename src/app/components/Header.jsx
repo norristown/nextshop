@@ -38,8 +38,8 @@ function Header() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex bg-white md:bg-white/80 backgrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10 pt-4">
-      <ul className="navbar__menu-left hidden lg:flex flex-1 justify-center items-center">
+    <nav className="flex bg-white md:bg-white/80 backdrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10">
+      <ul className="navbar__menu-left hidden lg:flex flex-1 justify-center mt-4">
         {navLinks.map((link) => (
           <li
             className={clsx("", {
@@ -51,10 +51,10 @@ function Header() {
           </li>
         ))}
       </ul>
-      <div className="hidden flex-1 md:flex items-center justify-center text-3xl md:text-6xl text-zinc-900 font-bold py-4">
+      <div className="hidden flex-1 md:flex items-center justify-center text-5xl text-zinc-900 font-bold py-4">
         <Link href="/">NextShopAPI</Link>
       </div>
-      <div className=" hidden lg:flex flex-1 items-center justify-center">
+      <div className=" hidden lg:flex flex-1 items-center justify-center mt-4 ">
         <NavLink url="/search">
           <UserIcon className="h-7 w-7" />
         </NavLink>

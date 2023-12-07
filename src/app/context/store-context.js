@@ -11,7 +11,6 @@ function StoreProvider({ children }) {
     async function getProducts() {
       const url = await fetch("https://fakestoreapi.com/products");
       const data = await url.json();
-      console.log(data);
       setStoreData(data);
     }
     getProducts();

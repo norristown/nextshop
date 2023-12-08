@@ -3,6 +3,7 @@
 import { useCart } from "../context/cart-context";
 import CartWrapper from "../components/CartWrapper";
 import Button from "../components/utilities/Button";
+import NumberCounter from "../components/utilities/NumberCounter";
 
 function CartPage() {
   const { state } = useCart();

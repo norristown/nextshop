@@ -19,8 +19,6 @@ function ProductPage() {
   const { storeData } = useStore();
 
   useEffect(() => {
-    console.log("Pathname:", pathname);
-    console.log("Store Data:", storeData);
     if (!storeData || storeData.length === 0) {
       return; // Exit early if storeData is empty
     }

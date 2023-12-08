@@ -1,8 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 import CartCard from "./CartCard";
 import { useCart } from "../context/cart-context";
+import NumberCounter from "./utilities/NumberCounter";
+import Button from "./utilities/Button";
 
 function Wrapper({ cartData, totalPrice, totalItems }) {
+  const { state, dispatch } = useCart();
+  // const [quantity, setQuantity] = useState(1);
   return (
     <div className="mt-32 mb-12" id="categories">
       <h2 className="text-zinc-900 text-xl font-semibold">
@@ -23,6 +30,20 @@ function Wrapper({ cartData, totalPrice, totalItems }) {
             <Link href={`/products/${x.id}`}>
               <CartCard name={x.category} src={x.image} imgUrl={x.image} />
             </Link>
+            <div className="product-controls flex justify-between items-end">
+              {/* <NumberCounter
+                quantity={quantity}
+                updateQuantity={() =>
+                  dispatch({
+                    type: "add",
+                    product: { ...x, quantity: x.quantity },
+                  })
+                }
+              /> */}
+              <Button variant="dark" onClick={() => console.log("Add to cart")}>
+                Add to Cart
+              </Button>
+            </div>
           </div>
         ))}
       </div>

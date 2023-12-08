@@ -54,7 +54,7 @@ function ProductPage() {
       {product && (
         <>
           <div className="cols-span-2">
-            <div className="border rounded border-slate-300 flex items-center justify-center">
+            <div className="border p-4 rounded border-slate-300 flex items-center justify-center">
               <StoreCard
                 src={product.image}
                 imgUrl={product.image}

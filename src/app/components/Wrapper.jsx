@@ -3,13 +3,11 @@ import StoreCard from "./StoreCard";
 
 function Wrapper({ storeData, category }) {
   return (
-    <div className="mt-32 mb-12" id="categories">
-      <h2 className="text-center text-zinc-900 text-xl font-semibold">
-        {category}
-      </h2>
-      <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 m-12">
+    <div className="mt-32" id="categories">
+      <h2 className="text-zinc-900 text-xl font-semibold">{category}</h2>
+      <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         {storeData.map((x, i) => (
-          <div className="flex flex-col justify-between" key={i}>
+          <div className="" key={i}>
             <div>
               <Link href={`/products/${x.id}`}>
                 <StoreCard name={x.category} src={x.image} imgUrl={x.image} />

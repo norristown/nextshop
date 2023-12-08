@@ -5,7 +5,7 @@ function StoreCard({ src, name, imgUrl }) {
     return src;
   }
   return (
-    <div className="relative w-64 h-64">
+    <div className="relative w-full h-48">
       <Image
         loader={imageLoader}
         src={imgUrl}

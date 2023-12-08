@@ -22,7 +22,7 @@ function CategoriesSection() {
 
   return (
     <div className="mb-12" id="categories">
-      <h2 className="text-center text-zinc-900 text-3xl mt-6 mb-3 p-2 font-semibold">
+      <h2 className="text-center text-zinc-900 text-xl mt-6 mb-3 p-2 font-base">
         Browse by Category
       </h2>
       <div className="grid gird-cols-1 md:grid-cols-4">

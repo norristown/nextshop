@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { StarIcon } from "@heroicons/react/24/solid";
 import StoreCard from "../../components/StoreCard";
 import Button from "../../components/utilities/Button";
 import NumberCounter from "../../components/utilities/NumberCounter";
@@ -63,8 +64,16 @@ function ProductPage() {
             </div>
           </div>
           <div className="cols-span-3 flex flex-col justify-between">
-            <div className="product-info">
+            <div className="product-info mb-4">
               <h1 className="font-semibold text-xl">{product.title}</h1>
+              <h1 className="font-bold text-lg text-gray-700 my-4">
+                ${product.price}
+              </h1>
+              {/* <div className="flex">
+                {}
+                <StarIcon className="w-7 h-7" /> {product.rating.rate}{" "}
+                <span>({product.rating.count})</span>
+              </div> */}
               <p>{product.description}</p>
             </div>
             <div className="product-controls flex justify-between items-end">

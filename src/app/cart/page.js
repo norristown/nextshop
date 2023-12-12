@@ -7,7 +7,10 @@ import NumberCounter from "../components/utilities/NumberCounter";
 
 function CartPage() {
   const { state } = useCart();
-  const totalPrice = state.products.reduce((acc, curr) => acc + curr.price, 0);
+  const totalPrice = state.products.reduce(
+    (acc, curr) => acc + curr.price * curr.quantity,
+    0
+  );
   const totalItems = state.products.reduce(
     (acc, curr) => acc + curr.quantity,
     0

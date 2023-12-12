@@ -9,9 +9,19 @@ function StoreProvider({ children }) {
   const value = { storeData, setStoreData };
   useEffect(() => {
     async function getProducts() {
-      const url = await fetch("https://fakestoreapi.com/products");
-      const data = await url.json();
-      setStoreData(data);
+      try {
+        const url = await fetch("https://fakestoreapi.com/products");
+        if (!url.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        const data = await url.json();
+        setStoreData(data);
+      } catch (error) {
+        console.log("Error fetching data:", error);
+      } finally {
+        console.log("finally");
+      }
     }
     getProducts();
   }, []);

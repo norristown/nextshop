@@ -8,6 +8,7 @@ import { useStore } from "../context/store-context";
 function StorePage() {
   const { storeData } = useStore();
   const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(true);
   const filter = storeData.filter((item) =>
     item.title.toLowerCase().includes(query.toLowerCase())
   );

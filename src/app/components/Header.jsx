@@ -39,7 +39,7 @@ function Header() {
     },
   ];
 
-  const [navbarOpen, setNavbarOpen] = useState(true);
+  const [navbarOpen, setNavbarOpen] = useState(false);
   const pathname = usePathname();
   const { state } = useCart();
   const totalItems = state.products.reduce(
@@ -49,7 +49,7 @@ function Header() {
 
   return (
     <nav className="bg-white md:bg-white/80 backdrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10">
-      <div className="flex flex-wrap items-center justify-between p-4 mx-auto">
+      <div className="flex flex-wrap items-center justify-between p-4 md:p-0 mx-auto">
         <Link href={"/"} className="text-2xl md:hidden">
           <ArrowUpIcon className="h-10 w-10" />
         </Link>

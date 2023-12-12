@@ -41,7 +41,6 @@ function ProductPage() {
   if (loading) {
     return <div>loading...</div>;
   }
-  console.log(product);
   //--------------------------------------------------------------------
   function handleAddToCart() {
     dispatch({ type: "add", product: { ...product, quantity } });

@@ -1,9 +1,9 @@
 import Link from "next/link";
 import StoreCard from "./StoreCard";
 
-function Wrapper({ storeData, category }) {
+function Wrapper({ storeData, category, mt = "mt-32" }) {
   return (
-    <div className="mt-32" id="categories">
+    <div className={`${mt} mb-8`} id="categories">
       <h2 className="text-zinc-900 text-xl font-semibold">{category}</h2>
       <div className="grid gird-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         {storeData.map((x, i) => (

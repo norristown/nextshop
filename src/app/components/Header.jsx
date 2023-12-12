@@ -6,10 +6,10 @@ import {
   Bars3Icon,
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
-import { useState } from "react";
 import clsx from "clsx";
 import { usePathname } from "next/navigation";
 import NavLink from "./utilities/NavLink";
+import { useCart } from "../context/cart-context";
 
 function Header() {
   const navLinks = [
@@ -36,6 +36,11 @@ function Header() {
   ];
 
   const pathname = usePathname();
+  const { state } = useCart();
+  const totalItems = state.products.reduce(
+    (acc, curr) => acc + curr.quantity,
+    0
+  );
 
   return (
     <nav className="flex bg-white md:bg-white/80 backdrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10">
@@ -58,9 +63,16 @@ function Header() {
         <NavLink url="/user">
           <UserIcon className="h-7 w-7" />
         </NavLink>
-        <NavLink url="/cart">
-          <ShoppingCartIcon className="h-7 w-7" />
-        </NavLink>
+        <div className="relative">
+          <NavLink url="/cart">
+            <ShoppingCartIcon className="h-7 w-7" />
+            {state.products.length > 0 && (
+              <div className="rounded-full bg-black group-hover:bg-zinc-100 group-hover:text-black text-white text-sm flex justify-center items-center absolute top-3 right-2 w-5 h-5">
+                {totalItems}
+              </div>
+            )}
+          </NavLink>
+        </div>
       </div>
     </nav>
   );

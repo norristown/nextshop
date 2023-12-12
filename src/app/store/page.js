@@ -20,7 +20,7 @@ function StorePage() {
       ) : filter.length === 0 ? (
         <p>Nothing here</p>
       ) : (
-        <Wrapper storeData={filter} category="Your search results:" />
+        <Wrapper storeData={filter} category="Your search results:" mt="mt-8" />
       )}
     </>
   );

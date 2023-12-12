@@ -67,7 +67,7 @@ function Header() {
           <NavLink url="/cart">
             <ShoppingCartIcon className="h-7 w-7" />
             {state.products.length > 0 && (
-              <div className="rounded-full bg-black group-hover:bg-zinc-100 group-hover:text-black text-white text-sm flex justify-center items-center absolute top-3 right-2 w-5 h-5">
+              <div className="rounded-full bg-rose-700 text-white font-bold text-sm flex justify-center items-center absolute top-3 right-2 w-5 h-5">
                 {totalItems}
               </div>
             )}

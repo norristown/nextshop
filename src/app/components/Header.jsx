@@ -17,6 +17,7 @@ import MenuOverlay from "./MenuOverlay";
 
 function Header() {
   const navLinks = [
+    { id: 0, title: "All Items", path: "/store" },
     {
       id: 1,
       title: `Men's`,
@@ -39,6 +40,31 @@ function Header() {
     },
   ];
 
+  const mobileLinks = [
+    { id: 0, title: "All Items", path: "/store" },
+    {
+      id: 1,
+      title: `Men's`,
+      path: "/category/mens",
+    },
+    {
+      id: 2,
+      title: `Women's`,
+      path: "/category/womens",
+    },
+    {
+      id: 3,
+      title: "Jewelry",
+      path: "/category/jewelry",
+    },
+    {
+      id: 4,
+      title: "Electronics",
+      path: "/category/electronics",
+    },
+    { id: 5, title: "Cart", path: "/cart" },
+  ];
+
   const [navbarOpen, setNavbarOpen] = useState(false);
   const pathname = usePathname();
   const { state } = useCart();
@@ -52,6 +78,9 @@ function Header() {
       <div className="flex flex-wrap items-center justify-between p-4 md:p-0 mx-auto">
         <Link href={"/"} className="text-2xl md:hidden">
           <ArrowUpIcon className="h-10 w-10" />
+        </Link>
+        <Link href={"/"} className="text-3xl font-semibold md:hidden">
+          NextShopAPI
         </Link>
         <ul className="navbar__menu-left hidden lg:flex flex-1 justify-center mt-4">
           {navLinks.map((link) => (
@@ -103,7 +132,7 @@ function Header() {
           )}
         </div>
       </div>
-      {navbarOpen && <MenuOverlay links={navLinks} />}
+      {navbarOpen && <MenuOverlay links={mobileLinks} />}
     </nav>
   );
 }

@@ -21,7 +21,9 @@ function cartReducer(state, action) {
       return { products: [...state.products, action.product] };
 
     case "remove":
-      return { products: state.products.filter((x) => x.id !== action.id) };
+      return {
+        products: state.products.filter((x) => x.id !== action.product.id),
+      };
     // case "updateAmount": {
     //   console.log("update");
     // products: state.products.map((item) =>

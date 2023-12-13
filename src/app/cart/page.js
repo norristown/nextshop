@@ -2,8 +2,6 @@
 
 import { useCart } from "../context/cart-context";
 import CartWrapper from "../components/CartWrapper";
-import Button from "../components/utilities/Button";
-import NumberCounter from "../components/utilities/NumberCounter";
 
 function CartPage() {
   const { state } = useCart();
@@ -21,14 +19,11 @@ function CartPage() {
       {state.products.length === 0 ? (
         <div>Your cart is empty</div>
       ) : (
-        <>
-          <CartWrapper
-            cartData={state.products}
-            totalPrice={totalPrice}
-            totalItems={totalItems}
-          />
-          <Button variant="primary">Checkout</Button>
-        </>
+        <CartWrapper
+          cartData={state.products}
+          totalPrice={totalPrice}
+          totalItems={totalItems}
+        />
       )}
     </div>
   );

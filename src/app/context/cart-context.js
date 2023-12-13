@@ -24,14 +24,28 @@ function cartReducer(state, action) {
       return {
         products: state.products.filter((x) => x.id !== action.product.id),
       };
-    // case "updateAmount": {
-    //   console.log("update");
-    // products: state.products.map((item) =>
-    //   id.id === action.product.id
-    //     ? { ...item, quantity: item.quantity + action.product.quantity }
-    //     : item
-    // ),
-    // }
+    case "increment":
+      console.log("inc", action.product);
+      return {
+        products: state.products.map((item) =>
+          item.id === action.product.id
+            ? { ...item, quantity: item.quantity++ }
+            : item
+        ),
+      };
+    case "decrement":
+      if (action.product.quantity === 0) {
+        return {
+          products: state.products.filter((x) => x.id !== action.product.id),
+        };
+      }
+      return {
+        products: state.products.map((item) =>
+          item.id === action.product.id
+            ? { ...item, quantity: item.quantity-- }
+            : item
+        ),
+      };
 
     default:
       throw new Error(`Unhandled action type: ${action.type} `);

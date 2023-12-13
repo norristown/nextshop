@@ -67,7 +67,7 @@ function ProductPage() {
             <div className="product-info mb-4">
               <h1 className="font-semibold text-xl">{product.title}</h1>
               <h1 className="font-bold text-lg text-gray-700 my-4">
-                ${product.price}
+                ${(Math.round(product.price * 100) / 100).toFixed(2)}
               </h1>
               {/* <div className="flex">
                 {}

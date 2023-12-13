@@ -2,6 +2,7 @@
 
 import { useCart } from "../context/cart-context";
 import CartWrapper from "../components/CartWrapper";
+import { useState } from "react";
 
 function CartPage() {
   const { state } = useCart();

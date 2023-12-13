@@ -29,12 +29,12 @@ function cartReducer(state, action) {
       return {
         products: state.products.map((item) =>
           item.id === action.product.id
-            ? { ...item, quantity: item.quantity++ }
+            ? { ...item, quantity: item.quantity + 1 }
             : item
         ),
       };
     case "decrement":
-      if (action.product.quantity === 0) {
+      if (action.product.quantity === 1) {
         return {
           products: state.products.filter((x) => x.id !== action.product.id),
         };
@@ -42,7 +42,7 @@ function cartReducer(state, action) {
       return {
         products: state.products.map((item) =>
           item.id === action.product.id
-            ? { ...item, quantity: item.quantity-- }
+            ? { ...item, quantity: item.quantity - 1 }
             : item
         ),
       };

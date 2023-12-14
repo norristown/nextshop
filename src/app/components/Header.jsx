@@ -78,7 +78,7 @@ function Header() {
   return (
     <nav className="bg-white md:bg-white/80 backdrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10">
       <div className="flex flex-wrap items-center justify-between p-4 md:p-0 mx-auto">
-        <button onClick={() => router.back()}>
+        <button className="md:hidden" onClick={() => router.back()}>
           <ArrowLeftIcon className="h-10 w-10" />
         </button>
         <Link href={"/"} className="text-3xl font-semibold md:hidden">

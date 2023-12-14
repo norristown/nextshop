@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { StarIcon } from "@heroicons/react/24/solid";
+import Link from "next/link";
 import StoreCard from "../../components/StoreCard";
 import Button from "../../components/utilities/Button";
 import NumberCounter from "../../components/utilities/NumberCounter";
@@ -15,6 +15,7 @@ function ProductPage() {
   const [notFound, setNotFound] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const [loading, setLoading] = useState(true);
+  const [itemAdded, setItemAdded] = useState(false);
 
   const { dispatch } = useCart();
   const { storeData } = useStore();
@@ -44,6 +45,7 @@ function ProductPage() {
   }
   //--------------------------------------------------------------------
   function handleAddToCart() {
+    setItemAdded(true);
     dispatch({ type: "add", product: { ...product, quantity } });
   }
 
@@ -82,6 +84,22 @@ function ProductPage() {
                 Add to Cart
               </Button>
             </div>
+            {itemAdded && (
+              <>
+                {" "}
+                <p className="text-green-600 text-sm font-semibold my-4">
+                  {product.title} has been added to your cart!
+                </p>
+                <Link href="/cart">
+                  <Button
+                    variant="primary"
+                    className="bg-green-600 hover:bg-green-700 w-full rounded"
+                  >
+                    Click here to checkout
+                  </Button>
+                </Link>
+              </>
+            )}
           </div>
         </>
       )}

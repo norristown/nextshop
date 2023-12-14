@@ -1,8 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { useCart } from "../context/cart-context";
 import CartWrapper from "../components/CartWrapper";
-import { useState } from "react";
 
 function CartPage() {
   const { state } = useCart();
@@ -16,7 +16,7 @@ function CartPage() {
   );
   console.log(state);
   return (
-    <div className="mt-48">
+    <div className="mt-48 mx-4 md:mx-0">
       {state.products.length === 0 ? (
         <div>Your cart is empty</div>
       ) : (

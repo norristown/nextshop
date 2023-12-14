@@ -6,10 +6,11 @@ import {
   Bars3Icon,
   XMarkIcon,
   ArrowUpIcon,
+  ArrowLeftIcon,
 } from "@heroicons/react/24/solid";
 import Link from "next/link";
 import clsx from "clsx";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
 import NavLink from "./utilities/NavLink";
 import { useCart } from "../context/cart-context";
@@ -65,6 +66,7 @@ function Header() {
     { id: 5, title: "Cart", path: "/cart" },
   ];
 
+  const router = useRouter();
   const [navbarOpen, setNavbarOpen] = useState(false);
   const pathname = usePathname();
   const { state } = useCart();
@@ -76,9 +78,9 @@ function Header() {
   return (
     <nav className="bg-white md:bg-white/80 backdrop-blur-md shadow-md w-full fixed top-0 left-0 right-0 z-10">
       <div className="flex flex-wrap items-center justify-between p-4 md:p-0 mx-auto">
-        <Link href={"/"} className="text-2xl md:hidden">
-          <ArrowUpIcon className="h-10 w-10" />
-        </Link>
+        <button onClick={() => router.back()}>
+          <ArrowLeftIcon className="h-10 w-10" />
+        </button>
         <Link href={"/"} className="text-3xl font-semibold md:hidden">
           NextShopAPI
         </Link>

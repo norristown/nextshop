@@ -48,11 +48,11 @@ function ProductPage() {
   }
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:max-w-screen-lg mx-auto my-32">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:max-w-screen-lg mx-4 md:mx-auto my-32">
       {product && (
         <>
           <div className="cols-span-2">
-            <div className="border p-4 rounded border-slate-300 flex items-center justify-center">
+            <div className="md:border p-4 rounded border-slate-300 flex items-center justify-center">
               <StoreCard
                 src={product.image}
                 imgUrl={product.image}

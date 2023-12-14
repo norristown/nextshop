@@ -25,7 +25,6 @@ function cartReducer(state, action) {
         products: state.products.filter((x) => x.id !== action.product.id),
       };
     case "increment":
-      console.log("inc", action.product);
       return {
         products: state.products.map((item) =>
           item.id === action.product.id
